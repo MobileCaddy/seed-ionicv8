@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script>
+    window.ASSET_ROOT = 'http://localhost:3030/'
+  </script>
+  <script src="http://localhost:3030/assets/js/force.js"></script>
+  <script src="http://localhost:3030/assets/js/underscore-min.js"></script>
+  <script src="http://localhost:3030/assets/js/MockCordova.js"></script>
+  <script src="http://localhost:3030/assets/js/codeflow-emulator.js"></script>
+
+  <script>
+    window.debug = true;
+    window.DEVICE_APP_NAME = 'BIZ001';
+    window.SF_LOGIN_URL = 'https://test.salesforce.com';
+    window.RESOURCE_ROOT = '';
+    window.CORS_PROXY_URL = 'http://localhost:3000';
+    // Your connected app ID
+    window.CONNECTED_APP_ID = '3MVG9Rd3qC6oMalWEuQby1hkUef0N2L7kTPExDjRAs1GH35ueKyc3q_D5NY0LLoLHnfwIr_Y8PyeRotaClrtZ';
+    window.REMOTE_NAMESPACE = null;
+    window.IonicVersion = 8;
+    window.USE_FORCETK = true; // Set to true for Running against an org
+    window.clientBundleVersion = '0.0.01';
+    //UNCOMMENT THIS WEHN RUNNING INSIDE CODEFLOW
+    window.LOCAL_DEV = true;
+  </script>
+
+  <meta charset="utf-8" />
+  <title>Ionic 8 MobileCaddy Starter</title>
+
+  <base href="/" />
+
+  <meta name="color-scheme" content="light dark" />
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+
+  <link rel="icon" type="image/png" href="assets/icon/favicon.png" />
+
+  <!-- add to homescreen for ios -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+</head>
+
+<body>
+  <app-root></app-root>
+</body>
+
+</html>

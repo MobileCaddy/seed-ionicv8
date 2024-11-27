@@ -1,0 +1,23 @@
+<ng-container *ngIf="showWelcome else showLoading">
+  <ion-content>
+    <swiper-container #swiper>
+      <swiper-slide
+        *ngFor="let slide of welcomeSlides; let i = index"
+        (click)="welcomeSlideClick(i)">
+        <img [src]="slide.imagePath" class="welcome-slide-img"/>
+      </swiper-slide>
+    </swiper-container>
+  </ion-content>
+</ng-container>
+
+<ng-template #showLoading>
+  <ion-content>
+    <p *ngIf="!loadingImage">The app is being built</p>
+    <img
+        *ngIf="loadingImage"
+        id="appIntro"
+        [src]= "loadingImage"/>
+    <ion-loading #loading [message]="loadingMessage" duration="12000"></ion-loading>
+  </ion-content>
+</ng-template>
+

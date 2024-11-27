@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Project Details</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button *ngIf="projectForm?.pristine"></ion-back-button>
+      <ion-button *ngIf="!projectForm?.pristine" size="small" (click)="cancelEdit()">
+        <ion-icon slot="icon-only" ios="close" md="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-alert
+    [isOpen]="isAlertOpen"
+    trigger="present-alert"
+    header="Confirm status change"
+    [buttons]="alertButtons"
+  ></ion-alert>
+  <ion-card>
+    <form *ngIf="project" #projectForm = "ngForm"> 
+    <ion-card-header>
+      <ion-card-title><ion-input placeholder="Project name" [(ngModel)]="project.Name" name="name"></ion-input>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-textarea 
+          label="Description"
+          labelPlacement="stacked"
+          placeholder="Description"
+          [(ngModel)]="project.mobilecaddy1__Description__c"
+          name="description"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-select label="Location" placeholder="" [(ngModel)]="project.mobilecaddy1__MC_Project_Location__c" name="mobilecaddy1__MC_Project_Location__c">
+          <ion-select-option value=null></ion-select-option>
+          <ion-select-option [value]="locationReverseKeyMap['Client Site']">Client Site</ion-select-option>
+          <ion-select-option [value]="locationReverseKeyMap['Office']">Office</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-button *ngIf="projectForm.pristine && project.mobilecaddy1__Status__c === 'Closed'"  (click)="reOpenProject()">Re-Open</ion-button>
+        <ion-button *ngIf="projectForm.pristine && project.mobilecaddy1__Status__c === 'Open'" (click)="closeProject()">Close</ion-button>
+      </ion-item>
+    </ion-card-content>
+    <ion-button *ngIf="!projectForm.pristine" fill="clear" (click)="cancelEdit()">Cancel</ion-button>
+    <ion-button *ngIf="!projectForm.pristine" fill="clear" (click)="saveEdit()">Save</ion-button>
+    </form>
+  </ion-card>
+</ion-content>

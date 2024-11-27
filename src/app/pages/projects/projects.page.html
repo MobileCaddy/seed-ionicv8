@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button size="small" (click)="sync()">
+        <ion-icon *ngIf="!isSyncing" slot="icon-only" ios="sync" md="sync"></ion-icon>
+        <ion-spinner *ngIf="isSyncing" name="circles"></ion-spinner>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Projects</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let p of projects" [routerLink]="['/project/' + p.Id]" >
+      <ion-icon *ngIf="p.mobilecaddy1__Status__c === 'Open'" aria-hidden="true" name="lock-open" color="warning" slot="start"></ion-icon>
+      <ion-icon *ngIf="p.mobilecaddy1__Status__c === 'Closed'" aria-hidden="true" name="lock-closed" color="primary" slot="start"></ion-icon>
+      <ion-icon *ngIf="!p.mobilecaddy1__Status__c" aria-hidden="true" name="remove" color="primary" slot="start"></ion-icon>
+      <ion-label>
+        <h1>{{ p.Name }}</h1>
+        <p>{{ p.mobilecaddy1__Description__c }}</p>
+        <p>Location: {{ p.location }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

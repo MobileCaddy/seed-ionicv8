@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8"/>
+  <title>Companion App</title>
+
+  <script type="text/javascript">
+    const relPath = document.location.href;
+    const base = relPath.substring(0, relPath.lastIndexOf('/')) + '/';
+    console.log('base', base);
+    document.write("<base href='" + base + "' />");
+  </script>
+
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <meta name="msapplication-tap-highlight" content="no"/>
+  
+  <script src="https://localhost/cordova.js"></script>
+  <script src="assets/js/force.js"></script>
+  <script src="assets/js/underscore-min.js"></script>
+
+  <script type="text/javascript">
+    window.debug = false;
+    window.DEVICE_APP_NAME = 'BIZ001';
+    window.RESOURCE_ROOT = '';
+    window.USE_FORCETK = false;
+    window.clientBundleVersion = '0.0.01';
+    window.IonicVersion = 8;
+    window.minContainerVersion = 3;
+  </script>
+
+  <!-- add to homescreen for ios -->
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+  <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.css"></noscript>
+
+<body>
+  <app-root></app-root>
+  <script src="runtime.js?v=%%VERSION%%" type="module"></script>
+  <script src="polyfills.js?v=%%VERSION%%" type="module"></script>
+  <script src="main.js?v=%%VERSION%%" type="module"></script>
+
+</html>
+

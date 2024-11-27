@@ -1,0 +1,7 @@
+{
+  "name": "mobilecaddy-ionic7",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
