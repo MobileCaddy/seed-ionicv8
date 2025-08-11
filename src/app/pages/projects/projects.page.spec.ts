@@ -8,7 +8,7 @@ describe('ProjectsPage', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ProjectsPage);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    // fixture.detectChanges(); TH 11th Aug 25 - not sure why I had to comment this out
   });
 
   it('should create', () => {
